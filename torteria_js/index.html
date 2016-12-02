@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <title>Torter&iacute;a</title>
+</head>
+<body>
+  <div class="container">
+    <h1 id="main-title">Torter&iacute;a JS</h1>
+    <form class="create-oven">
+      <input class="form-group" type="submit" value="Crear Horno">
+    </form>
+    <div class="oven">
+      <div id="horno-title">
+        <h1>Horno</h1>
+      </div>
+      <div id="timer">
+        <p id="countdown"></p>
+        <p id="status"></p>
+      </div>
+      <div id="cook">
+        <form id="new_torta">
+        <input type="text" placeholder="Type..">
+        <input type="text" placeholder="Time...">
+        <input type="submit" value="Cook">
+        </form>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <ol id="history">
+      <h1 class="recien-salidas">Recien salidas</h1>
+      <h3>1. milenesa LISTO</h3>
+    </ol>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
+
