@@ -1,14 +1,9 @@
 class Torta
   attr_reader :type
 
-  def initialize(type)
+  def initialize(type,time)
     @type = type
-    @time_baked = 0
-  end
-
-  def bake!(time)
-    @time_baked += time
-    self
+    @time_baked = time
   end
 
   def status
