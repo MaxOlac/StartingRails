@@ -14,14 +14,22 @@ $( document ).ready(function() {
     initialize();
   };
 
-  var PostIt = function() {
-  //     <div id="master" class="post-it">
-  //   <div class="header">
-  //     <div class="close">X</div>
-  //   </div>
-  //   <div class="content" contenteditable="true">...</div>
-  // </div>
+  var PostIt = function(x_pos,y_pos) {
     // Aquí va el código relacionado con un post-it
+    var master = $('<div id="master"class="post-it"></div>');
+    master.appendTo("#board");
+    var header = $('<div class="header"></div>');
+    header.appendTo(master);
+    master.draggable({
+      containment: '#board',
+      handle :header,
+      stack: '#master',
+    });
+    $('<div class="close">X</div>').appendTo(header);
+    $('<div class="content" contenteditable="true">...</div>').appendTo(master)
+    master.css("left",x_pos+'px')
+    master.css("top",y_pos+'px')
+
   };
 
   $(function() {
@@ -29,9 +37,19 @@ $( document ).ready(function() {
     new Board('#board');
   });
 //==================================================================
-  $("#board").dblclick(function(){
-    console.log($(this));
-       
+  $("#board").on('click','.close',function(event){
+    event.stopPropagation();
+    var post = $(this).parent().parent();
+    post.remove();
+    // $(this).remove();
   });
+//==================================================================
+$( "#board" ).dblclick(function() {
+  if(event.target.nodeName === "BODY"){
+    var pageX = event.pageX;
+    var pageY = event.pageY;
+    new PostIt(pageX,pageY);
+  };
+ });
 //==================================================================
 });
