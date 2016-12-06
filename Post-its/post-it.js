@@ -79,7 +79,7 @@ $( "body").dblclick('.board',function(event) {
 function newBorad() {
     var boardName = prompt("Please enter the name of new Board", "New Bord");
     if (boardName != null) {
-        $("<div class='link' id='"+board_id+"'>"+boardName+"</div>").appendTo("#nav_bar")
+        $("<div class='link' id='"+board_id+"' contenteditable='true'>"+boardName+"</div>").appendTo("#nav_bar")
         var div = $('<div class="board" id="board"></div>').appendTo("body");
         current=board_id;
         var tablero = new Board(div,board_id)
