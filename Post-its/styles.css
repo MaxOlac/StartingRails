@@ -1,9 +1,22 @@
-#board {
+body{
+  position: relative;
+}
+.board {
+  float: left;
   font-family: monospace;
   background-color: #9e8d68;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 93%;
   position: relative;
+}
+#nav_bar{
+  float: left;
+  position: relative;
+  background-color: gray;
+  height: 100%;
+  width:7%;
 }
 
 .post-it {
