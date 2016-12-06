@@ -73,7 +73,7 @@ $( "body").dblclick('.board',function(event) {
   //==================================================================
   $("body").on("click",".link",function(event){
     current=event.target.id;
-    hideBoards(boards[current].selector)
+    hideBoards(boards[current])
   });
 //==================================================================
 function newBorad() {
